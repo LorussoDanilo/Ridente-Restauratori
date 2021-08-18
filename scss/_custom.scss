@@ -123,6 +123,11 @@ textarea:-moz-placeholder {
                 }
             }
         }
+
+
+    img{
+            image-resolution: 300dpi;
+        
         .slide1 {
             background: url(../assets/img/ridente.jpg) no-repeat;
             background-size: cover;
@@ -133,6 +138,7 @@ textarea:-moz-placeholder {
             background-size: cover;
             background-position: 0% 0%;
         }
+    }
     }
 }
 
