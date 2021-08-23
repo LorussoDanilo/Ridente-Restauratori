@@ -725,6 +725,7 @@ footer {
     background: url('../assets/img/mobile.jpeg') no-repeat;
     background-position: 60% 0%;
     background-size: cover;
+    flood-opacity: initial;
     @include breakpoint(medium) {
         background-position: right center;
     }
