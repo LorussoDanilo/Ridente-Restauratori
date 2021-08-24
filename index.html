@@ -82,6 +82,7 @@
                                 <rect x="940.3" y="178.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 137.3893 746.1556)" class="st0" width="58.2" height="58.2"/>
                                 </svg>
                         </div>
+                        
                         <!--.divider-->
                     </div>
                     <!--.bottom-section-->
@@ -200,42 +201,46 @@
 
   <form action="insertlabel.php" id="privtelabel" method="POST">
     Tipologia Mobile:
-    <select name='product' id='product' required>
-      <option value="Bar Soap">Mobile Inglese</option>
+    <select name='tipologiaMobile' id='tipologiaMobile' required>
+      <option value="Mobile Inglese">Mobile Inglese</option>
       
     </select>
 
     <form action="insertlabel.php" id="privtelabel" method="POST">
         Materiale:
-        <select name='product' id='product' required>
-          <option value="Bar Soap">Acero</option>
-          <option value="Bar Soap">Quercia</option>
+        <select name='materiale' id='materiale' required>
+          <option value="Acero">Acero</option>
+          <option value="Quercia">Quercia</option>
           
         </select>
 
-        <br> Età del mobile: <input type="text" name="quantity" id='quantity' required>
-
+        <br> Età del mobile:
+         <select name='eta' id='eta' required>
+          <option value="Recente">Recente(meno di 20 anni)</option>
+          <option value="Discretamente recente">Discretamente recente(più di 20 anni)</option>
+          <option value="Antico">Antico(più di 50 anni)</option>
+        </select>
         <form action="insertlabel.php" id="privtelabel" method="POST">
             Dimensione:
-            <select name='size' id='size' required>
-              <option value="Regular Size(3oz)">Piccolo(50cm x 50cm x 50cm)</option>
-              <option value="4oz">Medio(100cm x 100cm x 100cm)</option>
-              <option value="5oz">Grande(1000cm x 1000cm x 1000cm)</option>
+            <select name='dimensione' id='dimensione' required>
+              <option value="Piccolo">Piccolo(50cm x 50cm x 50cm)</option>
+              <option value="Medio">Medio(100cm x 100cm x 100cm)</option>
+              <option value="Grande">Grande(1000cm x 1000cm x 1000cm)</option>
               
             </select>
 
-            <form action="insertlabel.php" id="privtelabel" method="POST">
+            <form action="insertlabel.php" id="privtelabel" method="POST" >
                 Tipologia Lavorazione:
-                <select name='size' id='size' required>
-                  <option value="Bar Soap">Lucidatura</option>
-                  <option value="Bar Soap">Impagliatura</option>
-                  <option value="Bar Soap">Cera</option>
+                <select name='tipologiaLavorazione' id='tipologiaLavorazione' required >
+                  <option value="Lucidatura">Lucidatura</option>
+                  <option value="Impagliatura">Impagliatura</option>
+                  <option value="Cera">Cera</option>
                   
                 </select>   
           
     <br> Quantità: <input type="text" name="quantity" id='quantity' required>
 
-    Prezzo: <span id="totalCost"></span>
+    <b>Prezzo:</b> <span id="totalCost"></span>
 
     <p>(Questa è solo una stima. Per informazioni più dettagliate,vi preghiamo di contattarci.)</p>
 
@@ -1321,40 +1326,66 @@
             $("#preloader").fadeOut();
         });
 
-       //Store some references to our DOM elements
-var productEl = document.querySelector('#product');
+var tipologiaMobile = document.querySelector('#tipologiaMobile');
+var tipologiaLavorazione = document.querySelector('#tipologiaLavorazione');
+
 var quantityEl = document.querySelector('#quantity');
-var sizeEl = document.querySelector('#size');
+var materiale = document.querySelector('#materiale');
+
+var dimensione = document.querySelector('#dimensione');
+
+var eta = document.querySelector('#eta');
+
+var tipologiaLavorazione = document.querySelector('#tipologiaLavorazione');
+
+
 var totalCostEl = document.querySelector('#totalCost');
 
 //Add the change event handlers on the applicable elements
-productEl.addEventListener('change', calculateTotal);
+tipologiaMobile.addEventListener('change', calculateTotal);
+tipologiaLavorazione.addEventListener('change', calculateTotal);
+materiale.addEventListener('change', calculateTotal);
+eta.addEventListener('change', calculateTotal);
+
 quantityEl.addEventListener('change', calculateTotal);
-sizeEl.addEventListener('change', calculateTotal);
+dimensione.addEventListener('change', calculateTotal);
 
 //Store your data in an object literal (essentially creating a map)
-var product_price = {}; //Noticed I replaced the [] with {}
-product_price['Bar Soap'] = 5;
-product_price['Shave Soap'] = 6;
-product_price['Shampoo Soap'] = 6;
-product_price['Face Soap'] = 7;
-product_price['Spray'] = 8;
-product_price['Balm'] = 8;
-product_price['Bath Soaks'] = 10;
+var prezzo_tipologia_mobile = {}; //Noticed I replaced the [] with {}
+prezzo_tipologia_mobile['Mobile Inglese'] = 500;
 
-var size_price = {};   //Noticed I replaced the [] with {}
-size_price['Regular Size(3oz)'] = 0;
-size_price['4oz'] = 2;
-size_price['5oz'] = 3;
+//Store your data in an object literal (essentially creating a map)
+var prezzo_tipologia_lavorazione = {}; //Noticed I replaced the [] with {}
+prezzo_tipologia_lavorazione['Cera'] = 50;
+prezzo_tipologia_lavorazione['Impagliatura'] = 30;
+prezzo_tipologia_lavorazione['Lucidatura'] = 70;
+
+var prezzo_materiale = {}; //Noticed I replaced the [] with {}
+prezzo_materiale['Acero'] = 100;
+prezzo_materiale['Quercia'] = 50;
+
+var prezzo_dimensione = {};   //Noticed I replaced the [] with {}
+prezzo_dimensione['Piccolo'] = 30;
+prezzo_dimensione['Medio'] = 100;
+prezzo_dimensione['Grande'] = 150;
+
+var eta_mobile = {};   //Noticed I replaced the [] with {}
+eta_mobile['Recente'] = 30;
+eta_mobile['Discretamente recente'] = 70;
+eta_mobile['Antico'] = 100;
 
 //Here's our single event handler - called when any of the 3 elements fire a 'change' event
 function calculateTotal() {
   //console.log()
-  var unitCost = product_price[productEl.value];
-  var additionalCost = size_price[sizeEl.value] || 0;
+  var unitCost = prezzo_tipologia_mobile[tipologiaMobile.value];
+  var tipologiaLavorazioneCost = prezzo_tipologia_lavorazione[tipologiaLavorazione.value];
+  var materialeUnitCost = prezzo_materiale[materiale.value];
+  var etaUnitCost = eta_mobile[eta.value];
+
+  var additionalCost = prezzo_dimensione[dimensione.value] || 0;
   var qty = quantityEl.value || 0;
 
-  totalCostEl.textContent = `Prezzo Totale: $${(unitCost * qty) + additionalCost}`;
+  totalCostEl.textContent = `${(tipologiaLavorazioneCost + etaUnitCost + materialeUnitCost + unitCost + additionalCost) * (qty)} €`;
 }
 
 
