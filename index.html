@@ -223,7 +223,7 @@
                   
                 </select>   
           
-    <br> Quantità: <input type="text" name="quantity" id='quantity' required>
+    <br> Quantità: <input type="text" name="quantity" id='quantity' required  >
 
     <b>Prezzo:</b> <span id="totalCost"></span>
 
@@ -1337,7 +1337,17 @@ materiale.addEventListener('change', calculateTotal);
 eta.addEventListener('change', calculateTotal);
 
 quantityEl.addEventListener('change', calculateTotal);
+
+/*Script per non permettere di usare il tasto invio*/
+$(document).keypress(
+  function(event){
+    if (event.which == '13') {
+      event.preventDefault();
+    }
+});
 dimensione.addEventListener('change', calculateTotal);
+/*Fine script*/
+
 
 //Store your data in an object literal (essentially creating a map)
 var prezzo_tipologia_mobile = {}; //Noticed I replaced the [] with {}
