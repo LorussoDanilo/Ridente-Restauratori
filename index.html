@@ -34,6 +34,7 @@
                                 <li><a class="m-anim" href="#specials-grid" data-text="I nostri lavori">I nostri lavori</a></li>
                                 <li><a class="m-anim" href="#about-us" data-text="About">Chi siamo</a></li>
                                 <li><a class="m-anim" href="#main-menu" data-text="Preventivo">Preventivo</a></li>
+                                <li><a class="m-anim" href="#dove-siamo" data-text="Dove">Dove siamo</a></li>
                                 <li><a class="m-anim" href="#contact-us" data-text="Contatti">Contatti</a></li>
                             </ul>
                         </nav>
@@ -77,19 +78,19 @@
         <div class="container">
             <div class="yellow-content">
                 <div class="icon">
-                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="assets/icon-vege.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Turnip greens</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="500">Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage.</p>
+                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="assets/persona.svg" />
+                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Professionalità</h3>
+                    <p class="scroll-reveal" data-distance="0" data-duration="500">Permettiamo al cliente di capire il restauro più conveniente per il suo mobile. </p>
                 </div>
                 <div class="icon">
-                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="assets/icon-coffee.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">beetroot water</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="700">Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek.</p>
+                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="assets/camion.svg" />
+                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Copertura</h3>
+                    <p class="scroll-reveal" data-distance="0" data-duration="700">Effettuiamo consegne in tutta la <b>Puglia</b>. Le consegne le effettuiamo noi,non ci rivolgiamo a nessuna ditta esterna.</p>
                 </div>
                 <div class="icon">
-                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="assets/icon-sweet.svg" />
-                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">get social</h3>
-                    <p class="scroll-reveal" data-distance="0" data-duration="900">Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut jícama.</p>
+                    <img class="scroll-reveal" data-origin="top" data-distance="20%" src="assets/orologio.svg" />
+                    <h3 class="scroll-reveal" data-origin="top" data-distance="20%">Puntualità</h3>
+                    <p class="scroll-reveal" data-distance="0" data-duration="900">Rispettiamo i tempi di consegna. Il cliente deve essere soddisfatto</p>
                 </div>
             </div>
             <!--.yellow-content-->
@@ -223,7 +224,7 @@
                                 </svg>
                 </div>
                 <!--.divider-->
-                <p class="scroll-reveal" data-origin="top" data-distance="10%">Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
+                <p class="scroll-reveal" data-origin="top" data-distance="10%">Siamo un'attività locale che opera nel settore da più di 40 anni. I restauri vengono realizzati da Ridente Nicola, un'artigiano esperto fondatore dell'attività, e dal nipote,Lorusso Sabino,il quale ha maturato più di 4 anni di esperienza nel settore. </p>
                 <img class="signature scroll-reveal" data-origin="right" data-distance="20%" src="assets/signature.png" />
             </div>
         </div>
@@ -304,6 +305,7 @@
 
 
   </form>
+  <section id="dove-siamo" class="menu-cart scroll-reveal"></section>
   <div class="container">
     <h1 class="header-txt">Dove siamo</h1>
     <?xml version="1.0" encoding="utf-8"?>
@@ -757,6 +759,168 @@
 	 width: 100%;
 }
  
+/*Stile per la sezione contattaci*/
+
+#fcf-form {
+    display:block;
+}
+
+.fcf-body {
+    margin: 0;
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    padding: 30px;
+    padding-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    max-width: 100%;
+}
+
+.fcf-form-group {
+    margin-bottom: 1rem;
+}
+
+.fcf-input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+
+.fcf-form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    outline: none;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.fcf-form-control:focus {
+    border: 1px solid #313131;
+}
+
+select.fcf-form-control[size], select.fcf-form-control[multiple] {
+    height: auto;
+}
+
+textarea.fcf-form-control {
+    font-family: -apple-system, Arial, sans-serif;
+    height: auto;
+}
+
+label.fcf-label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.fcf-credit {
+    padding-top: 10px;
+    font-size: 0.9rem;
+    color: #545b62;
+}
+
+.fcf-credit a {
+    color: #545b62;
+    text-decoration: underline;
+}
+
+.fcf-credit a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.fcf-btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fcf-btn {
+        transition: none;
+    }
+}
+
+.fcf-btn:hover {
+    color: #212529;
+    text-decoration: none;
+}
+
+.fcf-btn:focus, .fcf-btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.fcf-btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.fcf-btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.fcf-btn-primary:focus, .fcf-btn-primary.focus {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+.fcf-btn-lg, .fcf-btn-group-lg>.fcf-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+}
+
+.fcf-btn-block {
+    display: block;
+    width: 100%;
+}
+
+.fcf-btn-block+.fcf-btn-block {
+    margin-top: 0.5rem;
+}
+
+input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[type="button"].fcf-btn-block {
+    width: 100%;
+}
     </style>
 
     <script>
@@ -1475,6 +1639,7 @@ $(window).on("load", function() {
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU2Gq8mUEBMk1hcEnaBj7WcaaoR4mX444&callback=initMap&libraries=places,geometry&channel=GMPSB_locatorplus_v4_cABCDE" async defer></script>
     </body>
 
+<!--Fine sezione Mappa-->
 
   <a href="#0" class="cd-top">Top</a>
 <br><br><br><br><br><br><br>
@@ -1510,16 +1675,15 @@ $(window).on("load", function() {
               
               
 
-              <!--.contact-info-->
-              <div class="contact-form scroll-reveal" data-origin="bottom" data-distance="20%">
-                  <h3>Contattaci</h3>
-                  <form>
-                      <input type="text" name="name" placeholder="Nome">
-                      <input type="email" name="email" placeholder="Email">
-                      <textarea placeholder="Note"></textarea>
-                      <button class="send-form">Invia</button>
+              <!--.contact-info--> 
+                  <h1>Contattaci</h1>                
+                  <form action="contact.php" method="post">
+                      <input type="text" name="name" required  class="form-control" id="name" placeholder="Nome" />
+                      <input type="email" class="form-control" required name="email" id="email" placeholder="Email" />
+                      <input type="text" class="form-control" required name="subject" id="subject" placeholder="Oggetto" />
+                      <textarea class="form-control" name="message" id="message"  required  placeholder="Note"></textarea>
+                      <button type="submit">Invia</button>
                   </form>
-              </div>
               <!--.contact-form-->
               <div class="social-icons scroll-reveal" data-duration="1500">
                <a   href="https://www.facebook.com/Ridentenicola/">
