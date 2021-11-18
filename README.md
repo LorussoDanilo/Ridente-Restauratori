@@ -1,7 +1,7 @@
 # Ridente-Restauratori
 Sito vetrina per attività di restauratori mobili antichi.
-Download demonstration video:
-[VideoDimostrativo.zip](https://github.com/LorussoDanilo/Ridente-Restauratori/files/7565886/VideoDimostrativo.zip)
+<b>Download demonstration video:<b>
+<b>[VideoDimostrativo.zip](https://github.com/LorussoDanilo/Ridente-Restauratori/files/7565886/VideoDimostrativo.zip)<b>
 
 
 
